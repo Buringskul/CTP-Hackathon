@@ -1,46 +1,65 @@
-/* src/styles/Header.css */
+/* Header */
 .Header {
-    position: fixed; /* Fixes the header to the top of the page */
-    top: 0; /* Aligns it to the top */
-    left: 0; /* Aligns it to the left */
-    width: 100%; /* Makes the header full width */
-    background-color: #282c34; /* Background color */
-    padding: 20px; /* Padding around the content */
-    color: white; /* Text color */
-    z-index: 1000; /* Ensures the header is on top of other elements */
-    display: flex; /* Enables flexbox layout */
-    justify-content: space-between; /* Distributes space between title and nav */
-    align-items: center; /* Centers items vertically */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Align items to start and end of the header */
+    padding: 32px;
+    gap: 24px;
+    position: fixed; /* Fix header to the top of the page */
+    top: 0; /* Position at the very top */
+    left: 0;
+    width: 100%; /* Ensure header takes full width */
+    height: 99px;
+    background: #FFFFFF;
+    border-bottom: 1px solid #D9D9D9;
+    z-index: 1000; /* Ensure the header stays on top of other elements */
   }
   
+  /* Title */
   .title {
-    margin: 0; /* Removes default margin from title */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #3D5EE2;
+    margin: 0;
   }
   
+  /* Navigation */
+  nav {
+    display: flex;
+  }
+  
+  /* Navigation List */
   .nav-list {
-    list-style: none; /* Removes bullet points */
-    padding: 0; /* Removes default padding */
-    margin: 0; /* Removes default margin */
-    display: flex; /* Aligns items horizontally */
-    gap: 20px; /* Spacing between navigation items */
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
   }
   
+  /* Navigation List Items */
   .nav-list li {
-    margin: 0; /* Removes default margin */
+    display: flex;
   }
   
+  /* Navigation Links */
   .nav-list a {
-    color: white; /* Text color for links */
-    text-decoration: none; /* Removes underline from links */
-    font-size: 16px; /* Font size for links */
+    text-decoration: none;
+    color: #3D5EE2;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+    display: block; /* Ensure full block coverage for links */
   }
   
   .nav-list a:hover {
-    text-decoration: underline; /* Underline on hover */
-  }
-  
-  /* Adds padding to the top of the main content to account for the fixed header */
-  body {
-    padding-top: 80px; /* Adjust this value based on header height */
+    background: #F5F5F5;
+    color: #1E1E1E;
   }
   
