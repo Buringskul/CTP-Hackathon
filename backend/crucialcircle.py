@@ -1,10 +1,11 @@
 from flask import (Flask, render_template, redirect, url_for, flash, session)
 from flask_behind_proxy import FlaskBehindProxy
-from backend.forms import SignUpForm, SignInForm, ForumPost
+from forms import SignUpForm, SignInForm, ForumPost
 
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
+app.config['SECRET_KEY'] = ''  # noqa
 global logged_in
 
 
@@ -86,3 +87,7 @@ def getUsername(input_form):
         i += 1
     
     return username
+
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
