@@ -25,7 +25,7 @@ class Post():
 
 @app.route('/')
 @app.route('/home')
-def home(): # on home page
+def home():
     if 'email' in session:
         user = User.query.filter_by(email=session['email']).first()
         logged_in = True
