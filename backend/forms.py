@@ -20,3 +20,6 @@ class SignInForm(FlaskForm):
     email = EmailField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Sign In')
+
+class ForumPost(FlaskForm):
+    body = StringField('Begin forum post...', validators=[DataRequired(), Length(max=280)])
