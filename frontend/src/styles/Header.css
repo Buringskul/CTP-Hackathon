@@ -1,0 +1,46 @@
+/* src/styles/Header.css */
+.Header {
+    position: fixed; /* Fixes the header to the top of the page */
+    top: 0; /* Aligns it to the top */
+    left: 0; /* Aligns it to the left */
+    width: 100%; /* Makes the header full width */
+    background-color: #282c34; /* Background color */
+    padding: 20px; /* Padding around the content */
+    color: white; /* Text color */
+    z-index: 1000; /* Ensures the header is on top of other elements */
+    display: flex; /* Enables flexbox layout */
+    justify-content: space-between; /* Distributes space between title and nav */
+    align-items: center; /* Centers items vertically */
+  }
+  
+  .title {
+    margin: 0; /* Removes default margin from title */
+  }
+  
+  .nav-list {
+    list-style: none; /* Removes bullet points */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+    display: flex; /* Aligns items horizontally */
+    gap: 20px; /* Spacing between navigation items */
+  }
+  
+  .nav-list li {
+    margin: 0; /* Removes default margin */
+  }
+  
+  .nav-list a {
+    color: white; /* Text color for links */
+    text-decoration: none; /* Removes underline from links */
+    font-size: 16px; /* Font size for links */
+  }
+  
+  .nav-list a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  /* Adds padding to the top of the main content to account for the fixed header */
+  body {
+    padding-top: 80px; /* Adjust this value based on header height */
+  }
+  
