@@ -1,4 +1,4 @@
-/* Header */
+/* Header.css */
 .Header {
     box-sizing: border-box;
     display: flex;
@@ -17,7 +17,6 @@
     z-index: 1000; /* Ensure the header stays on top of other elements */
   }
   
-  /* Title */
   .title {
     font-family: 'Inter';
     font-style: normal;
@@ -28,12 +27,10 @@
     margin: 0;
   }
   
-  /* Navigation */
   nav {
     display: flex;
   }
   
-  /* Navigation List */
   .nav-list {
     display: flex;
     flex-direction: row;
@@ -43,12 +40,10 @@
     list-style-type: none;
   }
   
-  /* Navigation List Items */
   .nav-list li {
     display: flex;
   }
   
-  /* Navigation Links */
   .nav-list a {
     text-decoration: none;
     color: #3D5EE2;

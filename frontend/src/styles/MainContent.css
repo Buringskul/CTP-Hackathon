@@ -1,7 +1,18 @@
 /* MainContent.css */
-
-.categories {
-    margin-top: 12vh;;
+.main-content {
+    position: relative; /* Ensure absolute positioning within the main content */
+    padding: 0;
+    margin-top: 99px; /* Space below the fixed header */
+  }
+  
+  .cuny-students-image {
+    width: 80%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra spacing */
+    margin: 0 auto; /* Center the image horizontally */
+  }
+  
+  .categories {
     padding: 20px;
     align-items: center;
   }
