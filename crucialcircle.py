@@ -42,16 +42,31 @@ def register(): # on register page
         existing_user = User.query.filter_by(email=signup.email.data).first()
         if existing_user:
             flash('Email already exists. Please use a different email.')
-            return redirect(url_for('register'))
+#            return redirect(url_for('register'))
         else:
-            user = User(name=signup.name.data,
+            user_id = getUsername(signup)
+            user = User(username=user_id,
+                        first_name=signup.first_name.data,
+                        last_name=signup.last_name.data,
                         email=signup.email.data,
-                        password=signup.password.data,
-                        saved_recipes='')
+                        password=signup.password.data)
             logged_in = True
             db.session.add(user)
             db.session.commit()
-            flash(f'Account created for {signup.name.data}!')
+            flash(f'Account created for {signup.first_name.data}!')
             session['email'] = signup.email.data
 #            return redirect(url_for('home'))
         
+
+def getUsername(signup):
+    user_email = signup.email.data # get entire email
+    username = ''
+    i = 0
+    char = user_email[0]
+    
+    while char != '@':
+        char = user_email[i]
+        username += char
+        i += 1
+    
+    return username
