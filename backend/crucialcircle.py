@@ -1,7 +1,7 @@
 from flask import (Flask, flash, session)
 from flask_behind_proxy import FlaskBehindProxy
 from flask_sqlalchemy import SQLAlchemy
-from forms import SignUpForm, SignInForm
+from backend.forms import SignUpForm, SignInForm
 
 
 app = Flask(__name__)
@@ -43,6 +43,8 @@ def register(): # on register page
         if existing_user:
             flash('Email already exists. Please use a different email.')
 #            return redirect(url_for('register'))
+        elif '.cuny.edu' not in signup.email.data:
+            flash('Email must be a .cuny.edu email.')
         else:
             user_id = getUsername(signup)
             user = User(username=user_id,
