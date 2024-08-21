@@ -58,8 +58,8 @@ def register(): # on register page
 #            return redirect(url_for('home'))
         
 
-def getUsername(signup):
-    user_email = signup.email.data # get entire email
+def getUsername(input_form):
+    user_email = input_form.email.data  # get entire email
     username = ''
     i = 0
     char = user_email[0]
