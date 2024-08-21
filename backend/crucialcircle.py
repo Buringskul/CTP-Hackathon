@@ -5,7 +5,7 @@ from forms import SignUpForm, SignInForm, ForumPost
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
-app.config['SECRET_KEY'] = ''  # noqa
+app.config['SECRET_KEY'] = 'so unique and secret'  # noqa
 global logged_in
 
 
@@ -61,6 +61,7 @@ def register():
             flash(f'Account created for {signup.first_name.data}!')
             session['email'] = signup.email.data
             return redirect(url_for('home'))
+    return render_template('register.html', signup=signup, signin=signin, logged_in=logged_in)
 
 
 @app.route('/forum', methods=['GET'])
