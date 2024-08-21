@@ -1,6 +1,6 @@
-from flask import (Flask, flash, session)
+from flask import (Flask, render_template, redirect, url_for, flash, session)
 from flask_behind_proxy import FlaskBehindProxy
-from backend.forms import SignUpForm, SignInForm
+from backend.forms import SignUpForm, SignInForm, ForumPost
 
 
 app = Flask(__name__)
@@ -8,26 +8,34 @@ proxied = FlaskBehindProxy(app)
 global logged_in
 
 
-# Remove after API created:
-class User(db.Model):
-    username = db.Column(db.String(), primary_key=True)
-    first_name = db.Column(db.String(20), nullable=False)
-    last_name = db.Column(db.String(20), nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(60), nullable=False)
+class User():
+    username = ''
+    first_name = ''
+    last_name = ''
+    email = ''
+    password = ''
 
 
+class Post():
+    user_id = ''
+    likes = []
+    comments = []
+
+
+@app.route('/')
+@app.route('/home')
 def home(): # on home page
     if 'email' in session:
         user = User.query.filter_by(email=session['email']).first()
         logged_in = True
-#        return render_template('home.html', user=user, logged_in=True)
+        return render_template('home.html', user=user, logged_in=True)
     else:
         logged_in = False
-#        return render_template('home.html', logged_in=False)
+        return render_template('home.html', logged_in=False)
     
 
-def register(): # on register page
+@app.route('/register', methods=['GET'])
+def register():
     signup = SignUpForm()
     signin = SignInForm()
     logged_in = False
@@ -36,7 +44,7 @@ def register(): # on register page
         existing_user = User.query.filter_by(email=signup.email.data).first()
         if existing_user:
             flash('Email already exists. Please use a different email.')
-#            return redirect(url_for('register'))
+            return redirect(url_for('register'))
         elif '.cuny.edu' not in signup.email.data:
             flash('Email must be a .cuny.edu email.')
         else:
@@ -47,12 +55,24 @@ def register(): # on register page
                         email=signup.email.data,
                         password=signup.password.data)
             logged_in = True
-            db.session.add(user)
-            db.session.commit()
+#            db.session.add(user)
+#            db.session.commit()
             flash(f'Account created for {signup.first_name.data}!')
             session['email'] = signup.email.data
-#            return redirect(url_for('home'))
-        
+            return redirect(url_for('home'))
+
+
+@app.route('/forum', methods=['GET'])
+def forum():
+    if 'email' in session:
+        logged_in = True
+    else:
+        logged_in = False
+    form = ForumPost()
+    if form.validate_on_submit():
+        post_body = form.body.data
+    return render_template('forum.html', form=form, logged_in=logged_in)
+
 
 def getUsername(input_form):
     user_email = input_form.email.data  # get entire email
