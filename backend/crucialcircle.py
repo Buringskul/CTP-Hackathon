@@ -1,26 +1,20 @@
 from flask import (Flask, flash, session)
 from flask_behind_proxy import FlaskBehindProxy
-from flask_sqlalchemy import SQLAlchemy
 from backend.forms import SignUpForm, SignInForm
 
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///userinfo.db'
-
-db = SQLAlchemy(app)
 global logged_in
 
 
+# Remove after API created:
 class User(db.Model):
     username = db.Column(db.String(), primary_key=True)
     first_name = db.Column(db.String(20), nullable=False)
     last_name = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(60), nullable=False)
-
-#    def __repr__(self):
-#        return f'{self.name}', '{self.email}'
 
 
 def home(): # on home page
