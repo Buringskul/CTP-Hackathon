@@ -1,11 +1,11 @@
 import React from 'react';
 import '../styles/PostLoginContent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPencil, faTreeCity, faHandHoldingHeart, faShieldHeart, faQuestion } from '@fortawesome/free-solid-svg-icons';
+import { faPencil, faTreeCity, faHandHoldingHeart, faShieldHeart, faQuestion, faLeaf } from '@fortawesome/free-solid-svg-icons';
 
-function PostLoginContent{
+function PostLoginContent(){
     return(
-        <div className="categories">
+        <div className="PostLoginContent">
         <h2 className="category-title">Categories</h2>
         <p className="category-title">topics and resources</p>
         <div className="grid-container">

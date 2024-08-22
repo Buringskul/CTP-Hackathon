@@ -1,0 +1,27 @@
+.submission-item{
+    background-color: #f9f9f9; /* Background color for grid items */
+    border: 1px solid #ddd; /* Border around grid items */
+    padding: 20px; /* Padding inside each grid item */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+    transition: background-color 0.3s ease; /* Optional: transition effect on hover */
+}
+
+.submission-item:hover{
+    cursor: pointer;
+    background-color: #e2e2e2;
+}
+
+.submission-snippets{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
+    grid-auto-rows: minmax(100px, auto); /* Minimum row height of 100px */
+    gap: 10px; /* Space between grid items */
+    padding: 10px; /* Padding around the grid container */
+}
