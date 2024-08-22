@@ -2,12 +2,20 @@ from flask import (Flask, render_template, redirect, url_for, flash, session)
 from flask_behind_proxy import FlaskBehindProxy
 from forms import SignUpForm, SignInForm, ForumPost
 from forms import Flask, request, jsonify
+import pymongo
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
 app.config['SECRET_KEY'] = 'so unique and secret'  # noqa
 global logged_in
 
+## testing database ##
+app.secret_key = 'testing'
+global logged_in
+
+user = pymongo.MongoClient('mongodb+srv://laraschuman:laraschuman@testing.jr3jj.mongodb.net/?retryWrites=true&w=majority&appName=Testing')
+db = user.get_database('total_records')
+users_collection = db.user
 
 class User():
     username = ''
@@ -38,11 +46,13 @@ def home():
 @app.route('/api/register', methods=['GET','POST'])
 def register():
     signup = SignUpForm()
-    signin = SignInForm()
     logged_in = False
 
     if signup.validate_on_submit():
-        existing_user = User.query.filter_by(email=signup.email.data).first()
+        if request.method == 'POST':
+            users = mongo.db.users_collection
+            existing_user = users.find_one({'email': request.signup['email']})
+        #existing_user = User.query.filter_by(email=signup.email.data).first()
         if existing_user:
             flash('Email already exists. Please use a different email.')
             return redirect(url_for('register'))
@@ -50,11 +60,21 @@ def register():
             flash('Email must be a .cuny.edu email.')
         else:
             user_id = getUsername(signup)
-            user = User(username=user_id,
+            new_user = {
+                'username':user_id,
+                'first_name': signup.first_name.data,
+                'last_name': signup.last_name.data,
+                'email': signup.email.data,
+                'password': signup.password.data
+            }
+            users_collection.insert_one(new_user)
+            '''
+                user = User(username=user_id,
                         first_name=signup.first_name.data,
                         last_name=signup.last_name.data,
                         email=signup.email.data,
                         password=signup.password.data)
+            '''
             logged_in = True
 #            db.session.add(user)
 #            db.session.commit()
@@ -63,6 +83,10 @@ def register():
             return redirect(url_for('home'))
     return render_template('register.html', signup=signup, signin=signin, logged_in=logged_in)
 
+@app.route('/login', methods = ['GET'])
+def login():  
+    signin = SignInForm()
+    return ''
 
 @app.route('/api/forum', methods=['GET'])
 def forum():
