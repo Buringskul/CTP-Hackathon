@@ -13,7 +13,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw; /* Full viewport width */
+    width: 1000vw; /* Full viewport width */
     height: 1px; /* Border height */
     background: #D9D9D9; /* Border color */
     transform: translateX(-50vw); /* Adjust position to center */
