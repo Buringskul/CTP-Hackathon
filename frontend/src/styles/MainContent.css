@@ -54,8 +54,6 @@
   }
 
   .categories .category-title {
-    text-align: left !important; /* Force left alignment */
-    color: #1E1E1E !important; /* Force the color */
     margin-top: 0px;
     display: block;
 }
@@ -63,6 +61,7 @@
 /* Specific styling for h2 within categories */
 .categories h2.category-title {
     font-size: 44px !important; /* Larger font size for h2 */
+    color: #1E1E1E !important;
 }
 
 /* Specific styling for p within categories */
