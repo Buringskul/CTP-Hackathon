@@ -101,10 +101,7 @@ def getUsername(input_form):
         username += char
         i += 1
     
-#     return jsonify(username)
-# '''
-# if __name__ == "__main__":
-#     app.run(post=5000)
-# '''
-# if __name__ == '__main__':
-#     app.run(debug=True, host='0.0.0.0')
+    return jsonify(username)
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
