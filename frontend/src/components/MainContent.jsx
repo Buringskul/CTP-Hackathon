@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/MainContent.css';
 import cunyStudentsImg from '../images/cuny_students.jpg'; // Import image directly
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPencil, faTreeCity, faHandHoldingHeart, faShieldHeart, faQuestion } from '@fortawesome/free-solid-svg-icons';
 
 function MainContent() {
   return (
@@ -15,7 +17,7 @@ function MainContent() {
         />
         <h1 className='main-title'>CUNY Crucial Circle</h1>
         <p className='subtitle'>Real CUNY experiences and awareness</p>
-        <a className='join-button' href="/register">join the conversation</a>
+        <a className='join-button' href="../post-login-page.jsx">join the conversation</a>
       </div>
 
       
