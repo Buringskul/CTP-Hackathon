@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -10,6 +12,19 @@ import './App.css';
 import Register from './components/Register';
 
 function App() {
+  const [count, SetCount] = useState(0);
+  const [array, setArray] = useState([]);
+
+  const fetchAPI = async () => {
+    const response = await axios.get("http://localhost:5000/api/users")
+    console.log(response.data.users);
+    setArray(response.data.users);
+  }
+
+  useEffect(() => {
+    fetchAPI();
+  }, []);
+
   return (
     <Router>
       <div className="App">
@@ -21,6 +36,14 @@ function App() {
           <Route path="/register" element={<Register />} />
         </Routes>
         <Footer />
+      </div>
+      <div className="Test">
+        {array.map((user, index) => (
+          <div key={index}>
+            <span>{user}</span>
+            <br></br>
+          </div>
+        ))}
       </div>
     </Router>
   );
