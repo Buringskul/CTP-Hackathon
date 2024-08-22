@@ -5,7 +5,8 @@ import cunyStudentsImg from '../images/CUNYLogo.png';
 function Header() {
   return (
     <header className="Header">
-      <img src={cunyStudentsImg} className="nav-logo"></img>
+      <a href="/"><img src={cunyStudentsImg} className="nav-logo"></img></a>
+      
       <nav>
         <ul className="nav-list">
           {/*<li><a href="/">Home</a></li>        home button not relevent for prelogin page*/}
