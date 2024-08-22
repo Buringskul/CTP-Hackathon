@@ -20,7 +20,8 @@ function MainContent() {
 
       
       <div className="categories">
-      <h2>Categories</h2>
+        <h2 className="category-title">Categories</h2>
+        <p className="category-title">topics and resources</p>
         <div className="grid-container">
           <div className="grid-item">
             <h2>Academics</h2>

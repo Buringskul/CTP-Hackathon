@@ -49,10 +49,28 @@
   }
   
   .categories {
+    display: block;
     margin-top: -25vw;
-    padding: 20px;
-    align-items: center;
   }
+
+  .categories .category-title {
+    text-align: left !important; /* Force left alignment */
+    color: #1E1E1E !important; /* Force the color */
+    margin-top: 0px;
+    display: block;
+}
+
+/* Specific styling for h2 within categories */
+.categories h2.category-title {
+    font-size: 44px !important; /* Larger font size for h2 */
+}
+
+/* Specific styling for p within categories */
+.categories p.category-title {
+    font-size: 24px !important; /* Smaller font size for p */
+    color: #757575; /* Optional: set a different color */
+    margin-bottom: 50px;
+}
   
   .categories h2 {
     font-size: 24px;
@@ -69,7 +87,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 24px;
+    gap: 100px;
     justify-content: center; /* Center the grid items horizontally */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
@@ -94,6 +112,7 @@
     font-weight: 600;
     font-size: 24px;
     color: #1E1E1E;
+    text-align: left;
   }
   
   .grid-item p {
@@ -101,5 +120,6 @@
     font-weight: 400;
     font-size: 16px;
     color: #757575;
+    text-align: left;
   }
   
