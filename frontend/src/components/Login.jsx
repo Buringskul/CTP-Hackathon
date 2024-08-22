@@ -33,12 +33,12 @@ function Login() {
             required
           />
         </div>
-        <p>
-          <input type="submit" value="Login" />
-        </p>
+        <button style={{ backgroundColor: '#555' }} type="submit">Login</button>
       </form>
     </div>
   );
+
+  
 }
 
 export default Login;

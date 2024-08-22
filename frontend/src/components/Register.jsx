@@ -7,6 +7,13 @@ function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  var newUser = [
+    firstName: String,
+    lastName: String,
+    email: String,
+    password: String
+]
+
   const handleRegister = (e) => {
     e.preventDefault();
     // Handle registration logic here
@@ -51,9 +58,7 @@ function Register() {
             required
           />
         </div>
-        <p>
-          <input type="submit" value="Register" />
-        </p>
+        <button style={{ backgroundColor: '#555' }} type="submit">Register</button>
       </form>
     </div>
   );
