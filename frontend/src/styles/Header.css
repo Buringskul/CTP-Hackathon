@@ -70,4 +70,25 @@
     background: #F5F5F5;
     color: #1E1E1E;
   }
+
+  @media (min-width: 600px){
+    .nav-logo{
+      height: 6vw;
+    }
+    .nav-list a{
+      border-radius: 1vw;
+      font-size: 1.5vw;
+    }
+
+    .Header{
+      padding: 1vw;
+    }
+    .login{
+      padding: .3vw .6vw;
+    }
+  
+    .register{
+      padding: .3vw .6vw;
+    }
+  }
   

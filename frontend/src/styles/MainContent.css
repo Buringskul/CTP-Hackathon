@@ -122,4 +122,8 @@
     color: #757575;
     text-align: left;
   }
-  
+  @media (min-width: 600px){
+    .main-content {
+      margin-top: 10vw; /* Space below the fixed header */
+    }
+  }
