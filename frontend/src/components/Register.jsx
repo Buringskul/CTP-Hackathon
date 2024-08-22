@@ -16,7 +16,7 @@ function Register() {
   return (
     <div className="register-container">
       <h2>Register</h2>
-      <form onSubmit={handleRegister}>
+      <form onSubmit={handleRegister} method="post">
         <div className="form-group">
           <label htmlFor="firstName">First Name:</label>
           <input
@@ -26,8 +26,6 @@ function Register() {
             onChange={(e) => setFirstName(e.target.value)}
             required
           />
-        </div>
-        <div className="form-group">
           <label htmlFor="lastName">Last Name:</label>
           <input
             type="text"
@@ -36,8 +34,6 @@ function Register() {
             onChange={(e) => setLastName(e.target.value)}
             required
           />
-        </div>
-        <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -46,8 +42,6 @@ function Register() {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-        </div>
-        <div className="form-group">
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -57,7 +51,9 @@ function Register() {
             required
           />
         </div>
-        <button style={{ backgroundColor: '#555' }} type="submit">Register</button>
+        <p>
+          <input type="submit" value="Register" />
+        </p>
       </form>
     </div>
   );
