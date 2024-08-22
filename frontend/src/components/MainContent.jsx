@@ -15,11 +15,12 @@ function MainContent() {
         />
         <h1 className='main-title'>CUNY Crucial Circle</h1>
         <p className='subtitle'>Real CUNY experiences and awareness</p>
-        <button type="button" className='join-button'>join the conversation</button>
+        <a className='join-button' href="/register">join the conversation</a>
       </div>
 
+      
       <div className="categories">
-        <h2>Categories</h2>
+      <h2>Categories</h2>
         <div className="grid-container">
           <div className="grid-item">
             <h2>Academics</h2>
