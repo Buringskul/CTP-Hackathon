@@ -5,11 +5,18 @@ import cunyStudentsImg from '../images/cuny_students.jpg'; // Import image direc
 function MainContent() {
   return (
     <main className="main-content">
-      <img 
-        src={cunyStudentsImg} 
-        alt="CUNY Students" 
-        className="cuny-students-image" 
-      />
+
+      
+      <div className='title-block'>
+        <img 
+         src={cunyStudentsImg} 
+         alt="CUNY Students" 
+         className="cuny-students-image" 
+        />
+        <h1 className='main-title'>CUNY Crucial Circle</h1>
+        <button type="button" className='join-button'>join the conversation</button>
+      </div>
+
       <div className="categories">
         <h2>Categories</h2>
         <div className="grid-container">
