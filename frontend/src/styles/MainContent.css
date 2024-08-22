@@ -91,6 +91,7 @@
     justify-content: center; /* Center the grid items horizontally */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
+    margin-bottom: 50px;
   }
   
   .grid-item {
