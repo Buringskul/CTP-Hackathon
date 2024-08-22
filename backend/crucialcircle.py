@@ -1,7 +1,7 @@
 from flask import (Flask, render_template, redirect, url_for, flash, session)
 from flask_behind_proxy import FlaskBehindProxy
 from forms import SignUpForm, SignInForm, ForumPost
-
+from forms import Flask, request, jsonify
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
@@ -35,7 +35,7 @@ def home():
         return render_template('home.html', logged_in=False)
     
 
-@app.route('/register', methods=['GET'])
+@app.route('/api/register', methods=['GET','POST'])
 def register():
     signup = SignUpForm()
     signin = SignInForm()
@@ -64,7 +64,7 @@ def register():
     return render_template('register.html', signup=signup, signin=signin, logged_in=logged_in)
 
 
-@app.route('/forum', methods=['GET'])
+@app.route('/api/forum', methods=['GET'])
 def forum():
     if 'email' in session:
         logged_in = True
@@ -75,7 +75,7 @@ def forum():
         post_body = form.body.data
     return render_template('forum.html', form=form, logged_in=logged_in)
 
-
+@app.route('/api/users', methods=['GET'])
 def getUsername(input_form):
     user_email = input_form.email.data  # get entire email
     username = ''
@@ -87,8 +87,10 @@ def getUsername(input_form):
         username += char
         i += 1
     
-    return username
-
-
+    return jsonify(username)
+'''
+if __name__ == "__main__":
+    app.run(post=5000)
+'''
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
