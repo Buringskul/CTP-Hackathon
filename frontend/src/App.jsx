@@ -37,14 +37,14 @@ function App() {
         </Routes>
         <Footer />
       </div>
-      <div className="Test">
+      {/* <div className="Test">
         {array.map((user, index) => (
           <div key={index}>
             <span>{user}</span>
             <br></br>
           </div>
         ))}
-      </div>
+      </div> */}
     </Router>
   );
 }
