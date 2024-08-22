@@ -14,9 +14,9 @@ function Login() {
   return (
     <div className="login-container">
       <h2>Login</h2>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} method="post">
         <div className="form-group">
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
@@ -24,9 +24,7 @@ function Login() {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
@@ -35,7 +33,9 @@ function Login() {
             required
           />
         </div>
-        <button style={{ backgroundColor: '#555' }} type="submit">Login</button>
+        <p>
+          <input type="submit" value="Login" />
+        </p>
       </form>
     </div>
   );
