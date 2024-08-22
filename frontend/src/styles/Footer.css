@@ -1,13 +1,13 @@
-/* Footer Styling */
 .Footer {
     position: relative;
     padding: 16px;
     background: #FFFFFF;
     width: 100%;
-    z-index: 1000; /* Ensure it stays on top if necessary */
+    z-index: 1000;
+    overflow-x: hidden;
   }
-  
-  /* Add a border that spans the full width of the page */
+
+
   .Footer::before {
     content: '';
     position: absolute;
@@ -18,8 +18,7 @@
     background: #D9D9D9; /* Border color */
     transform: translateX(-50vw); /* Adjust position to center */
   }
-  
+
   .Footer {
-    margin-top: auto; /* Pushes footer to the bottom of the page */
+    margin-top: auto;
   }
-  
