@@ -58,6 +58,12 @@
     display: block;
 }
 
+.icon{
+  font-size: 50px;
+  position: relative;
+  right:100px;
+}
+
 /* Specific styling for h2 within categories */
 .categories h2.category-title {
     font-size: 44px !important; /* Larger font size for h2 */
@@ -86,7 +92,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 100px;
+    gap: 50px;
     justify-content: center; /* Center the grid items horizontally */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
@@ -97,10 +103,9 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 10px;
     width: 320px;
     min-width: 160px;
-    height: 180px;
     background: #FFFFFF;
     border-left: 1px solid #000000;
     border-radius: 8px;
