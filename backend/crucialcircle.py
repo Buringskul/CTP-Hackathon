@@ -11,7 +11,7 @@ global logged_in
 
 ## testing database ##
 app.secret_key = 'testing'
-global logged_in
+# global logged_in
 
 user = pymongo.MongoClient('mongodb+srv://laraschuman:laraschuman@testing.jr3jj.mongodb.net/?retryWrites=true&w=majority&appName=Testing')
 db = user.get_database('total_records')
