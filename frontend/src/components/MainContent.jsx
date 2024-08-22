@@ -5,8 +5,6 @@ import cunyStudentsImg from '../images/cuny_students.jpg'; // Import image direc
 function MainContent() {
   return (
     <main className="main-content">
-
-      
       <div className='title-block'>
         <img 
          src={cunyStudentsImg} 
@@ -18,7 +16,6 @@ function MainContent() {
         <a className='join-button' href="/register">join the conversation</a>
       </div>
 
-      
       <div className="categories">
         <h2 className="category-title">Categories</h2>
         <p className="category-title">topics and resources</p>
