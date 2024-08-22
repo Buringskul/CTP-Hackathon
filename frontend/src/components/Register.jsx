@@ -7,12 +7,14 @@ function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  var newUser = [
-    firstName: String,
-    lastName: String,
-    email: String,
-    password: String
-]
+  class User {
+    constructor(fname, lname, email, password) {
+      this.fname;
+      this.lname;
+      this.email;
+      this.password;
+    }
+  }
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -58,10 +60,17 @@ function Register() {
             required
           />
         </div>
-        <button style={{ backgroundColor: '#555' }} type="submit">Register</button>
+        <button style={{ backgroundColor: '#555' }} type="submit" onClick={() => { create_user(firstName, lastName, email, password) }}>Register</button>
       </form>
     </div>
   );
+
+  function create_user(fname, lname, email, password) {
+    const new_user = new User(fname, lname, email, password);
+    console.log("test")
+  } 
+
 }
+
 
 export default Register;
