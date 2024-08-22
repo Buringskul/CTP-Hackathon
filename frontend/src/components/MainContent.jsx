@@ -14,6 +14,7 @@ function MainContent() {
          className="cuny-students-image" 
         />
         <h1 className='main-title'>CUNY Crucial Circle</h1>
+        <p className='subtitle'>Real CUNY experiences and awareness</p>
         <button type="button" className='join-button'>join the conversation</button>
       </div>
 

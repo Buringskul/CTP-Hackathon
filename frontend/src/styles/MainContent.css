@@ -21,7 +21,14 @@
     height: auto; /* Maintain aspect ratio */
     display: block; /* Remove any extra spacing */
     margin: 0 auto; /* Center the image horizontally */
-    opacity: 0.5
+    opacity: 0.35
+  }
+
+  .subtitle{
+    position: relative;
+    bottom:35vw;
+    font-size: 3vw;
+    font-weight: 400;
   }
 
   .join-button{
