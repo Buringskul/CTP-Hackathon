@@ -89,17 +89,17 @@ def login():
 #         post_body = form.body.data
 #     return render_template('forum.html', form=form, logged_in=logged_in)
 
-# @app.route('/api/users', methods=['GET'])
-# def getUsername(input_form):
-#     user_email = input_form.email.data  # get entire email
-#     username = ''
-#     i = 0
-#     char = user_email[0]
+@app.route('/api/users', methods=['GET'])
+def getUsername(input_form):
+    user_email = input_form.email.data  # get entire email
+    username = ''
+    i = 0
+    char = user_email[0]
     
-#     while char != '@':
-#         char = user_email[i]
-#         username += char
-#         i += 1
+    while char != '@':
+        char = user_email[i]
+        username += char
+        i += 1
     
 #     return jsonify(username)
 # '''
