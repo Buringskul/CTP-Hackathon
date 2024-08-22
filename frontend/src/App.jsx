@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import MainContent from './components/MainContent';
 import Login from './components/Login';  // Import the Login component
 import Resources from './components/Resources';  // Import the Resources component
+import PostLoginPage from './post-login-page';
 import './App.css';
 import Register from './components/Register';
 
