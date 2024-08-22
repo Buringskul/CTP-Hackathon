@@ -15,7 +15,7 @@ function MainContent() {
         />
         <h1 className='main-title'>CUNY Crucial Circle</h1>
         <p className='subtitle'>Real CUNY experiences and awareness</p>
-        <a className='join-button' href="../post-login-page.jsx">join the conversation</a>
+        <a className='join-button' href="../postlogin">join the conversation</a>
       </div>
 
       <div className="categories">
