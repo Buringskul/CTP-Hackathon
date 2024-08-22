@@ -3,9 +3,11 @@ import '../styles/Resources.css'; // If you have custom styles for the Resources
 
 function Resources() {
   const resources = [
-    { title: 'Resource 1', description: 'Description of resource 1', link: '#' },
-    { title: 'Resource 2', description: 'Description of resource 2', link: '#' },
-    { title: 'Resource 3', description: 'Description of resource 3', link: '#' },
+    { title: 'Food Security', description: '20/25 CUNY campuses have food pantries where students can get free products. Stop by your campus food pantry to see what services are available', link: 'https://www.healthycuny.org/cuny-food-pantries' },
+    { title: 'Heathcare', description: 'Every CUNY campus has a Health Center that can provide a variety of services.', link: 'https://www.healthycuny.org/cuny-health-centers' },
+    { title: 'Housing Insecurity', description: 'Many CUNY students experience housing insecuirty and homelessness. Below are the resources for students in need', link: 'https://younginvincibles.org/part-1-resources-for-homelessness-students-in-nyc/' },
+    { title: 'Mental Health', description: 'All CUNY campuses have counseling centers that help students deal with the psychological stress that comes from balancing being a student with daily life.', link: 'https://www.healthycuny.org/oncampus-services' },  
+    { title: 'Survival Guide', description: 'Below is a coherent guide if this is your first time going to a CUNY campus.', link: 'https://www.cuny.edu/about/administration/offices/communications-marketing/student-survival-guide/' },
   ];
 
   return (

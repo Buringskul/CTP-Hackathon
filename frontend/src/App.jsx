@@ -5,7 +5,9 @@ import Footer from './components/Footer';
 import MainContent from './components/MainContent';
 import Login from './components/Login';  // Import the Login component
 import Resources from './components/Resources';  // Import the Resources component
+import PostLoginPage from './post-login-page';
 import './App.css';
+import Register from './components/Register';
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
           <Route path="/" element={<MainContent />} />
           <Route path="/login" element={<Login />} />  {/* Add Login route */}
           <Route path="/resources" element={<Resources />} />  {/* Add Resources route */}
+          <Route path="/register" element={<Register />} />
         </Routes>
         <Footer />
       </div>

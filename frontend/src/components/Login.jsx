@@ -35,7 +35,7 @@ function Login() {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button style={{ backgroundColor: '#555' }} type="submit">Login</button>
       </form>
     </div>
   );

@@ -2,20 +2,74 @@
 .main-content {
     position: relative; /* Ensure absolute positioning within the main content */
     padding: 0;
-    margin-top: 99px; /* Space below the fixed header */
+    margin-top: 20vw; /* Space below the fixed header */
+  }
+  .main-title{
+    font-size:6vw;
+    display:block;
+    position: relative;
+    top: -40vw;
   }
   
   .cuny-students-image {
-    width: 80%;
+    width: 100%;
     height: auto; /* Maintain aspect ratio */
     display: block; /* Remove any extra spacing */
     margin: 0 auto; /* Center the image horizontally */
+    opacity: 0.35
+  }
+
+  .subtitle{
+    position: relative;
+    top:-42vw;
+    font-size: 3vw;
+    font-weight: 400;
+  }
+
+  .join-button{
+    display:inline-block;
+    font-size: 2vw;
+    width:40vw;
+    height:3.5vw;
+    position: relative;
+    top: -40vw;
+    padding: 0;
+    background-color: #000000;
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .join-button:hover{
+    background-color: #0056b3;
   }
   
   .categories {
-    padding: 20px;
-    align-items: center;
+    display: block;
+    margin-top: -25vw;
   }
+
+  .categories .category-title {
+    margin-top: 0px;
+    display: block;
+}
+
+/* Specific styling for h2 within categories */
+.categories h2.category-title {
+    font-size: 44px !important; /* Larger font size for h2 */
+    color: #1E1E1E !important;
+}
+
+/* Specific styling for p within categories */
+.categories p.category-title {
+    font-size: 24px !important; /* Smaller font size for p */
+    color: #757575; /* Optional: set a different color */
+    margin-bottom: 50px;
+}
   
   .categories h2 {
     font-size: 24px;
@@ -32,10 +86,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 24px;
+    gap: 100px;
     justify-content: center; /* Center the grid items horizontally */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
+    margin-bottom: 50px;
   }
   
   .grid-item {
@@ -57,6 +112,7 @@
     font-weight: 600;
     font-size: 24px;
     color: #1E1E1E;
+    text-align: left;
   }
   
   .grid-item p {
@@ -64,5 +120,10 @@
     font-weight: 400;
     font-size: 16px;
     color: #757575;
+    text-align: left;
   }
-  
+  @media (min-width: 600px){
+    .main-content {
+      margin-top: 10vw; /* Space below the fixed header */
+    }
+  }
