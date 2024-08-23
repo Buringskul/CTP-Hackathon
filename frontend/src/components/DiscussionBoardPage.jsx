@@ -38,9 +38,13 @@ function DiscussionBoardPage() {
                     <div key={index} className="submission">
                         <a className='submission-holder'>
                             
-                            <div className="board-submission-title">{submission.title}</div>
-                            <div className="color-box" style={{ backgroundColor: categoryColors[submission.category] }}></div>
-                            <span className="submission-category">{submission.category}</span>
+                            <div className="board-submission-title">
+                                {submission.title}
+                                <div className='category-name-snippet'><div className="color-box" style={{ backgroundColor: categoryColors[submission.category] }}></div>
+                                 <div className="submission-category">{submission.category}</div></div>
+                            </div>
+                            
+                            
                             <div className='submission-profile'><FontAwesomeIcon className='profile' icon={faUser}/></div>
                             <div className='submission-description'>{submission.description}</div>
                             <div className='submission-likes'>
