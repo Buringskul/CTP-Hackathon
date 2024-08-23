@@ -1,5 +1,5 @@
-.post-login-content {
-    margin-top: 150px;
+.post-login-content{
+  margin-top :150;
 }
 
 .grid-items {
@@ -15,19 +15,18 @@
     text-align: left;
     min-height: 80px;
   }
-
-  .grid-items h2 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 24px;
-    color: #1E1E1E;
-    text-align: left;
+  .category-title{
+    font-size: 6vw;
+  }
+  .category-description{
+    font-size: 3vw;
+  }
+  .post-login-grid-item h2{
+    font-size: 4vw;
   }
   
-  .grid-items p {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #757575;
-    text-align: left;
+  .post-login-icon{
+    font-size: 10vw;
+    margin-right: 15px;
   }
+}

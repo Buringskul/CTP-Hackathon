@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta name="viewport" content="with=device-width, intitial-scale=1.0">
+    <title>Flask WTForms to Frontend Tester</title>
+
+
+</head>
+
+<body>
+
+    <!-- logo and navigation -->
+    <section class="header">
+        <nav>
+            <div class="nav-links">
+                <br><br><br>
+                <ul>
+
+                    <li>
+                        <a href="./home" class="nav-btn">Home</a>
+                    </li>
+                    <li>
+                        <a href="./forum" class="nav-btn">Discussion Forum</a>
+                    </li>
+                    {% if logged_in %}
+                    <li>
+                        <a href="{{ url_for('logout') }}" class="nav-btn">Log Out</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="./register" class="nav-btn">Sign In</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <!-- where stuff in other files goes -->
+    {% block content %}{% endblock %}
+
+
+</body>
+
+</html>

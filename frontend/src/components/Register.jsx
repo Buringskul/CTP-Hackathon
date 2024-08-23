@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/Register.css'; // If you have custom styles for the Register component
+import axios from 'axios';
 
 function Register() {
   const [firstName, setFirstName] = useState('');
@@ -16,7 +17,7 @@ function Register() {
   return (
     <div className="register-container">
       <h2>Register</h2>
-      <form onSubmit={handleRegister}>
+      <form onSubmit={handleRegister} method="post">
         <div className="form-group">
           <label htmlFor="firstName">First Name:</label>
           <input
@@ -26,8 +27,6 @@ function Register() {
             onChange={(e) => setFirstName(e.target.value)}
             required
           />
-        </div>
-        <div className="form-group">
           <label htmlFor="lastName">Last Name:</label>
           <input
             type="text"
@@ -36,8 +35,6 @@ function Register() {
             onChange={(e) => setLastName(e.target.value)}
             required
           />
-        </div>
-        <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -46,8 +43,6 @@ function Register() {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-        </div>
-        <div className="form-group">
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -57,10 +52,26 @@ function Register() {
             required
           />
         </div>
-        <button style={{ backgroundColor: '#555' }} type="submit">Register</button>
+        <button style={{ backgroundColor: '#555' }} type="submit" onClick={() => { create_user(firstName, lastName, email, password) }}>Register</button>
       </form>
     </div>
   );
+
+  function create_user(fname, lname, email, password) {
+    const new_user = [fname, lname, email, password];
+    axios.post("http://localhost:5000/api/register", new_user)
+      .then((response) => {
+        const data = response['data'] // data is an array of [boolean, fname, lname, email, password, username]
+        { data[0] ? console.log("Success!") : console.log("Fail") }
+        // change above to reload page if unsuccessful, possibly display message that it was unsuccessful
+          // if successful, log user in and send to login home page
+      })
+      .catch((error) => {
+      console.log(error);
+      });
+  } 
+
 }
+
 
 export default Register;
