@@ -11,30 +11,29 @@ function DiscussionBoardPage() {
     function get_posts() {
         axios.get("http://localhost:5000/discussions")
             .then((response) => {
-                //const posts = response['data']
+                const posts = response['data']
 
-                const posts = {
-                    0: {
-                        'user': 'rafid',
-                        'title': 'why one piece is the best',
-                        'category': 'Academics',
-                        'likes': 999999999999999,
-                        'body': 'here is why one piece is the best'
-                    },
-                    1: {
-                        'user': 'alysa',
-                        'title': 'why hzd is the best',
-                        'category': 'Questions',
-                        'likes': 2,
-                        'body': 'here is why hzd is the best'
-                    }
-                }
+                // const posts = {
+                //     0: {
+                //         'user': 'rafid',
+                //         'title': 'why one piece is the best',
+                //         'category': 'Academics',
+                //         'likes': 999999999999999,
+                //         'body': 'here is why one piece is the best'
+                //     },
+                //     1: {
+                //         'user': 'alysa',
+                //         'title': 'why hzd is the best',
+                //         'category': 'Questions',
+                //         'likes': 2,
+                //         'body': 'here is why hzd is the best'
+                //     }
+                // }
                 setPosts(posts);
             })
             .catch((error) => {
                 console.log(error);
             });
-        console.log('test')
     }
     
     useEffect(() => get_posts(), []);
