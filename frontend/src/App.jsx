@@ -13,18 +13,18 @@ import './App.css';
 import Register from './components/Register';
 
 function App() {
-  const [count, SetCount] = useState(0);
-  const [array, setArray] = useState([]);
+  // const [count, SetCount] = useState(0);
+  // const [array, setArray] = useState([]);
 
-  const fetchAPI = async () => {
-    const response = await axios.get("http://localhost:5000/api/users")
-    console.log(response.data.users);
-    setArray(response.data.users);
-  }
+  // const fetchAPI = async () => {
+  //   const response = await axios.get("http://localhost:5000/api/users")
+  //   console.log(response.data.users);
+  //   setArray(response.data.users);
+  // }
 
-  useEffect(() => {
-    fetchAPI();
-  }, []);
+  // useEffect(() => {
+  //   fetchAPI();
+  // }, []);
 
   return (
     <Router>
