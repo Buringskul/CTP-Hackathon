@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/Register.css'; // If you have custom styles for the Register component
+import axios from 'axios';
 
 function Register() {
   const [firstName, setFirstName] = useState('');
@@ -67,7 +68,14 @@ function Register() {
 
   function create_user(fname, lname, email, password) {
     const new_user = new User(fname, lname, email, password);
-    console.log("test")
+    axios.post("http://localhost:5000/api/register", new_user)
+    // axios.post("http://127.0.0.1:5000/api/register", new_user)
+      .then((response) => {
+      console.log(response);
+      })
+      .catch((error) => {
+      console.log(error);
+      });
   } 
 
 }
