@@ -23,10 +23,18 @@ def users():
     )
 
 
+@app.route('/api/login', methods=['GET', 'POST'])
+def login():
+    data = request.get_json()
+    print(data)
+    return data
+
+
 @app.route('/api/register', methods=['GET', 'POST'])
 def register():
     data = request.get_json()
-    print('Hello World', flush=True)
+    # print('Hello, World!')  # Print for testing
+    print(data)
     return data
 
 
