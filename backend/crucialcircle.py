@@ -1,3 +1,4 @@
+import bcrypt
 from flask import (Flask, render_template, redirect, url_for, flash, session)
 from flask_behind_proxy import FlaskBehindProxy
 from forms import SignUpForm, SignInForm, ForumPost
@@ -13,9 +14,9 @@ global logged_in
 app.secret_key = 'testing'
 # global logged_in
 
-user = pymongo.MongoClient('mongodb+srv://laraschuman:laraschuman@testing.jr3jj.mongodb.net/?retryWrites=true&w=majority&appName=Testing')
-db = user.get_database('total_records')
-users_collection = db.user
+client = pymongo.MongoClient('mongodb+srv://laraschuman:laraschuman@testing.jr3jj.mongodb.net/?retryWrites=true&w=majority&appName=Testing')
+db = client.get_database('total_records')
+users_collection = db['users_collection']  
 
 class User():
     username = ''
@@ -42,36 +43,39 @@ class Post():
 #         logged_in = False
 #         return render_template('home.html', logged_in=False)
     
+def submit_form():
+    data = request.json
+
+    if not data:
+        return jsonify({"error": "No data provided"}), 400
+    f_name = data.get('firstName')
+    l_name = data.get('lastName')
+    email = data.get('email')
+    password = data.get('password')
+
+    if not all([f_name, l_name, email, password]):
+        return jsonify({"error": "All fields are required"}), 400
+    existing_user = users_collection.find_one({'email': email})
+    
+    hashpass = bcrypt.hashpw(request.signup['password'].encode('utf-8'),bcrypt.gensalt())
+
+    if existing_user:
+        return jsonify({"error": "User with this email already exists"}), 400
+    
+    new_user = {
+                'username':getUsername(email),
+                'firstName': f_name,
+                'lastName': l_name,
+                'email': email,
+                'password': hashpass.decode('utf-8')
+            }
+    return jsonify({"message":"Data received successfully!"}), 200
 
 @app.route('/api/register', methods=['GET','POST'])
 def register():
-    signup = SignUpForm()
-    # logged_in = False
-
-    if signup.validate_on_submit():
-        if request.method == 'POST':
-            users = mongo.db.users_collection
-            existing_user = users.find_one({'email': request.signup['email']})
-        #existing_user = User.query.filter_by(email=signup.email.data).first()
-        if existing_user:
-            print("temp")
-            # flash('Email already exists. Please use a different email.')
-            # return redirect(url_for('register'))
-        else:
-            user_id = getUsername(signup)
-            new_user = {
-                'username':user_id,
-                'first_name': signup.first_name.data,
-                'last_name': signup.last_name.data,
-                'email': signup.email.data,
-                'password': signup.password.data
-            }
-            users_collection.insert_one(new_user)
-            # logged_in = True
-            # flash(f'Account created for {signup.first_name.data}!')
-            # session['email'] = signup.email.data
-            return redirect(url_for('home'))  # ?
-    return render_template('register.html', signup=signup, signin=signin, logged_in=logged_in)  # ?
+    if request.method == 'POST':
+           return submit_form()
+    return render_template('register.html')
 
 @app.route('/login', methods = ['GET'])
 def login():  
