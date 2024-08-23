@@ -49,13 +49,32 @@ function DiscussionBoardPage() {
                 </div>
                 <div >
                     {postsKeys.map((postKey) => (
-                        <div key="sample">
-                            <p>{posts[postKey]['user']}</p>
-                            <p>{posts[postKey]['category']}</p>
-                            <p>{posts[postKey]['title']}</p>
-                            <p>{posts[postKey]['body']}</p>
-                            <p>{posts[postKey]['likes']}</p>
-                        </div>
+                        // <div key="sample">
+                        //     <p>{posts[postKey]['user']}</p>
+                        //     <p>{posts[postKey]['category']}</p>
+                        //     <p>{posts[postKey]['title']}</p>
+                        //     <p>{posts[postKey]['body']}</p>
+                        //     <p>{posts[postKey]['likes']}</p>
+                        // </div>
+                        <a key="test" className='submission-holder'>
+                            
+                            <div className="board-submission-title">
+                                {posts[postKey]['title']}
+                                <div className='category-name-snippet'><div className="color-box"></div>
+                                    <div className="submission-category">{posts[postKey]['category']}</div></div>
+                            </div>
+                            
+                            
+                            <div className='submission-profile'><FontAwesomeIcon className='profile' icon={faUser}/></div>
+                            <div className='submission-description'>{posts[postKey]['body']}</div>
+                            <div className='submission-likes'>
+                                <FontAwesomeIcon className='heart' icon={faHeart}/> 
+                                <div className='like-number'>
+                                    {posts[postKey]['likes']}
+                                </div>
+                                
+                            </div>
+                        </a>
                     ))}
                 </div>
             </div>
