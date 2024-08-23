@@ -3,11 +3,34 @@ import '../styles/SubmissionSnippets.css';
 
 function SubmissionSnippets() {
     const Submissions = [
-        { user: 'Resource 1', title: 'Description of resource 1', category: '#', likes: '' },
-        { user: 'Resource 2', title: 'Description of resource 2', category: '#', likes: '' },
-        { user: 'Resource 3', title: 'Description of resource 3', category: '#', likes: '' },
-        // Add more resources as needed
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
+        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
     ];
+
+    const categoryColors = {
+        'Academics': 'red',
+        'Environment Awareness': 'green',
+        'Mental Health': 'blue',
+        'Safety': 'orange',
+        'Questions': 'purple',
+        'CUNY Resources': 'teal'
+    };
 
     const submissionsPerPage = 12;
     const [currentPage, setCurrentPage] = useState(1);
@@ -26,10 +49,9 @@ function SubmissionSnippets() {
                 {currentSubmissions.map((submission, index) => (
                     <div key={index} className="submission-item">
                         <a>
-                            <h3 className="submission-user">{submission.user}</h3>
                             <p className="submission-title">{submission.title}</p>
+                            <div className="color-box" style={{ backgroundColor: categoryColors[submission.category] }}></div>
                             <span className="submission-category">{submission.category}</span>
-                            <span className="submission-likes">{submission.likes}</span>
                         </a>
                     </div>
                 ))}
