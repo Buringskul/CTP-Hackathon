@@ -81,19 +81,14 @@ def login():
     else:
         return jsonify({"error": "User not found"}), 404
 
-    
-
-    # print(data)
     return jsonify(data), 200  # data is an array of [boolean, fname, lname, email, password, username]
 
 
 @app.route('/api/register', methods=['GET', 'POST'])
 def register():
     data = request.get_json()  # data is an array of [fname, lname, email, password]
-    # print('Hello, World!')  # Print for testing
 
     username = create_username(data[2])
-    #print(username)
     
     data.append(username)
 
@@ -101,7 +96,7 @@ def register():
     
     if submit_form(data):  # checks if user (or email) exists in database, if not adds to db
         data[0] = True
-    #print(data)
+
     return data  # data is an array of [boolean, fname, lname, email, password, username]
 
 
@@ -142,6 +137,38 @@ def create_posts():
         inserted_ids.append(str(result.inserted_id))
 
     return jsonify({"message": "Posts created", "post_ids": inserted_ids}), 201
+
+
+@app.route('/discussions', methods=['GET', 'POST'])
+def discussions(): # gets posts
+    data = request.get_json()
+
+    # example of what posts looks like:
+    # posts = {
+    #     0: {
+    #         'user': 'rafid',
+    #         'title': 'why one piece is the best',
+    #         'category': 'facts, non-fiction',
+    #         'likes': 35,
+    #         'body': 'here is why one piece is the best'
+    #     },
+    #     1: {
+    #         'user': 'alysa',
+    #         'title': 'why hzd is the best',
+    #         'category': 'facts, non-fiction',
+    #         'likes': 27,
+    #         'body': 'here is why hzd is the best'
+    #     }
+    # }
+
+    posts = {}
+
+    # get posts from database
+        # append details into posts dictionary
+
+    # print(posts)  # test print
+
+    return posts
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
