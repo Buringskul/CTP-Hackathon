@@ -48,6 +48,10 @@ a:hover{
     bottom: 50px;
     color: black;
     font-size: 20px;
+    white-space: nowrap;           /* Prevents the text from wrapping to the next line */
+    overflow: hidden;              /* Hides the overflowing content */
+    text-overflow: ellipsis;       /* Adds "..." at the end of the text */
+    max-width: 80vw; 
 }
 
 .submission-description{

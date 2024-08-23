@@ -68,6 +68,7 @@
 .categories h2.category-title {
     font-size: 44px !important; /* Larger font size for h2 */
     color: #1E1E1E !important;
+    margin-bottom: 0px;
 }
 
 /* Specific styling for p within categories */
@@ -75,6 +76,7 @@
     font-size: 24px !important; /* Smaller font size for p */
     color: #757575; /* Optional: set a different color */
     margin-bottom: 50px;
+    margin-top: 0px;
 }
   
   .categories h2 {
@@ -92,7 +94,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 50px;
+    gap: 100px;
     justify-content: center; /* Center the grid items horizontally */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
@@ -110,6 +112,7 @@
     border-left: 1px solid #000000;
     border-radius: 8px;
     text-align: left;
+    min-height: 265px;
   }
   
   .grid-item h2 {

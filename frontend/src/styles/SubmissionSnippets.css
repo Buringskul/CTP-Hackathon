@@ -58,11 +58,16 @@
     margin:10px;
 }
 
-@media (max-width: 600px){
+@media (min-width: 600px){
     .submission-list{
         grid-template-columns: repeat(2, 1fr);
     }
     .submission-title{
         max-width: 45vw; 
     }
+    .submission-item{
+        width: 45vw;
+    }
   }
+
+  @media ()

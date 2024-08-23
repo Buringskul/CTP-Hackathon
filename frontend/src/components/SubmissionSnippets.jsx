@@ -7,20 +7,6 @@ function SubmissionSnippets() {
         { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
         { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
         { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
-        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
-        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
-        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
-        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
-        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
-        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
-        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
-        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
-        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
-        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
-        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
-        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
-        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
-        { user: 'Resource 1', title: 'My bad experience at CISC 3115', category: 'Academics', likes: '' },
     ];
 
     const categoryColors = {

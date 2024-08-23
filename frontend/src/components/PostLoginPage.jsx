@@ -6,7 +6,6 @@ import PostLoginContent from './PostLoginContent';
 function PostLoginPage() {
   return (
     <>
-        <h1>Welcome to Your Dashboard</h1>
         <PostLoginContent />
         <SubmissionSnippets />
     </>

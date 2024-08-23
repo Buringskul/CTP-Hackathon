@@ -1,0 +1,11 @@
+.new-submission-overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-submission-container{
+    height: 70vh;
+    width: 80vw;
+    border: 2px solid #333;
+}
