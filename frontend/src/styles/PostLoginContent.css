@@ -1,3 +1,15 @@
-.categories{
-    
+.category-title {
+    color: #1E1E1E; /* This will make the <h2> black */
+    margin-bottom: 0px;
+    font-size: 44px;
+  }
+  
+  .category-description {
+    color: #757575; /* This will make the <p> grey */
+    font-size: 24px;
+    margin-top: 0px;
+  }
+
+.PostLoginContent {
+    margin-top: 150px;
 }

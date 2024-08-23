@@ -6,8 +6,9 @@ import { faPencil, faTreeCity, faHandHoldingHeart, faShieldHeart, faQuestion, fa
 function PostLoginContent(){
     return(
         <div className="PostLoginContent">
+        <h1>Welcome to Your Dashboard</h1>
         <h2 className="category-title">Categories</h2>
-        <p className="category-title">topics and resources</p>
+        <p className="category-description">topics and resources</p>
         <div className="grid-container">
           <a href='/discussionboard' className="grid-item discussionboard">
             <FontAwesomeIcon className='icon' icon={faPencil}/>
@@ -17,7 +18,7 @@ function PostLoginContent(){
               textbook resources, tutoring, professor advice.
             </p>
           </a>
-          <a className="grid-item">
+          <a href='/discussionboard' className="grid-item">
             <FontAwesomeIcon className='icon' icon={faLeaf}/>
             <h2>Environment Awareness</h2>
             <p>
@@ -25,7 +26,7 @@ function PostLoginContent(){
               planting tips.
             </p>
           </a>
-          <a className="grid-item">
+          <a href='/discussionboard' className="grid-item">
             <FontAwesomeIcon className='icon' icon={faHandHoldingHeart}/>
             <h2>Mental Health</h2>
             <p>
@@ -34,7 +35,7 @@ function PostLoginContent(){
             coping strategies, and support systems.
             </p>
           </a>
-          <a className="grid-item">
+          <a href='/discussionboard' className="grid-item">
           <FontAwesomeIcon className='icon' icon={faShieldHeart}/>
             <h2>Safety</h2>
             <p>
@@ -42,7 +43,7 @@ function PostLoginContent(){
             stress management, counseling resources,
              coping strategies, and support systems.            </p>
           </a>
-          <a className="grid-item">
+          <a href='/discussionboard' className="grid-item">
             <FontAwesomeIcon className='icon' icon={faQuestion}/>
             <h2>Questions</h2>
             <p>
@@ -51,7 +52,7 @@ function PostLoginContent(){
             and engaging in Q&A.
             </p>
           </a>
-          <a className="grid-item">
+          <a href='/discussionboard' className="grid-item">
             <FontAwesomeIcon className='icon' icon={faTreeCity}/>
             <h2>CUNY Resources</h2>
             <p>
