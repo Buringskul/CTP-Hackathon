@@ -1,3 +1,76 @@
-.categories{
-    
+
+  .categories {
+    display: block;
+    margin-top: -25vw;
+  }
+
+  .categories .category-title {
+    margin-top: 0px;
+    display: block;
 }
+
+.post-login-icon{
+  font-size: 50px;
+}
+
+/* Specific styling for h2 within categories */
+.categories h2.category-title {
+    font-size: 44px !important; /* Larger font size for h2 */
+    color: #1E1E1E !important;
+}
+
+/* Specific styling for p within categories */
+.categories p.category-title {
+    font-size: 24px !important; /* Smaller font size for p */
+    color: #757575; /* Optional: set a different color */
+    margin-bottom: 50px;
+}
+  
+  .categories h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .categories p {
+    font-size: 16px;
+    color: #757575;
+  }
+  
+  .grid-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 50px;
+    justify-content: center; /* Center the grid items horizontally */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    margin-bottom: 50px;
+  }
+  
+  .post-login-grid-item {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 320px;
+    min-width: 160px;
+    background: #FFFFFF;
+    border-left: 1px solid #000000;
+    border-radius: 8px;
+    text-align: left;
+  }
+  
+  .grid-item h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #1E1E1E;
+    text-align: left;
+  }
+  
+  .grid-item p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #757575;
+    text-align: left;
+  }

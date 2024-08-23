@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../styles/DiscussionBoardPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faPlus, faX, faHeart } from '@fortawesome/free-solid-svg-icons';
+import NewSubmissionSection from './NewSubmissionSection';
 
 
 function DiscussionBoardPage() {
@@ -64,10 +65,11 @@ function DiscussionBoardPage() {
                     </button>
                 ))}
             </div>
+            <NewSubmissionSection/>
         </div>
     );
 }
 
 
 
-export default DiscussionBoardPage
+export default DiscussionBoardPage;
