@@ -8,15 +8,6 @@ function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // class User {
-  //   constructor(fname, lname, email, password) {
-  //     this.fname;
-  //     this.lname;
-  //     this.email;
-  //     this.password;
-  //   }
-  // }
-
   const handleRegister = (e) => {
     e.preventDefault();
     // Handle registration logic here
