@@ -34,7 +34,7 @@
     max-width: 30vw; 
 }
 
-.color-box{
+.submission-snippet-color-box{
     float: left;
     position: relative;
     left:10px;
@@ -43,7 +43,7 @@
     width:10px;
 }
 
-.submission-category{
+.submission-snippet-category{
     font-size: 15px;
     color:#333;
     float:left;
