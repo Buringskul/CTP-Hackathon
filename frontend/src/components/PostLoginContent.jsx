@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/PostLoginContent.css';
+import '../styles/PostLoginContent.css'; // Ensure this CSS file exists and is correctly linked
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencil, faTreeCity, faHandHoldingHeart, faShieldHeart, faQuestion, faLeaf } from '@fortawesome/free-solid-svg-icons';
 
@@ -39,4 +39,4 @@ function PostLoginContent(){
     );
 }
 
-export default PostLoginContent
+export default PostLoginContent;
