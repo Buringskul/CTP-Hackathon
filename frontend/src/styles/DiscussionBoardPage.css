@@ -1,0 +1,119 @@
+.DiscussionBoard{
+    margin-top: 18vh;
+}
+
+a:hover{
+    color:black;
+}
+
+.submission-item{
+    background-color: #f9f9f9; /* Background color for grid items */
+    border: 1px solid #ddd; /* Border around grid items */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+    transition: background-color 0.3s ease;
+}
+
+.profile{
+    font-size: x-large;
+    position: relative;
+    bottom: 20px;
+}
+
+.heart{
+    position: relative;
+}
+
+.submission-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns, each taking up equal space */
+    grid-auto-rows: minmax(100px, auto); /* Minimum row height of 100px, adjust as needed */
+    gap: 10px; /* Space between items, adjust as needed */
+    padding: 10px; 
+}
+
+.submission-item:hover{
+    cursor: pointer;
+}
+
+.board-submission-title{
+    float: left;
+    position: relative;
+    bottom: 50px;
+    color: black;
+    font-size: 20px;
+}
+
+.submission-description{
+    color: #333;
+    padding-left: 30px;
+    border-left: 1px solid black;
+    display: -webkit-box;          /* Use a box model that allows for multiple lines */
+    -webkit-box-orient: vertical;  /* Specifies the orientation of the box (vertical for multi-line) */
+    overflow: hidden;              /* Hide any content that overflows the specified number of lines */
+    text-overflow: ellipsis;       /* Adds an ellipsis (...) after the overflowing text */
+    -webkit-line-clamp: 4;         /* Limits the text to 4 lines */
+    line-height: 1.5;              /* Adjust the line height if needed */
+    max-height: calc(1.5em * 4);   /* This sets the maximum height for 4 lines of text */
+}
+
+.submission{
+    padding: 20px;
+    margin: 50px 20px;
+}
+
+.color-box{
+    float: left;
+    position: relative;
+    left:-280px;
+    top:-13px;
+    height:10px;
+    width:10px;
+}
+
+.submission-category{
+    font-size: 15px;
+    color:#333;
+    float:left;
+    position: relative;
+    left: -275px;
+    top:-20px;
+}
+
+.submission-profile{
+    position: relative;
+    top:10px;
+    right:22px;
+    background-color: #D9D9D9;
+    height:45px;
+    width: 45px;
+    border-radius: 100%;
+}
+
+.submission-likes{
+    position: relative;
+    top:0px;
+    right:17px;
+    background-color: #D9D9D9;
+    height:35px;
+    width: 35px;
+    border-radius: 100%;
+}
+
+.like-number{
+    position: relative;
+    font-size: 14px;
+    bottom: 9px;
+}
+
+.pagination-button{
+    width:10vw;
+    background-color: black;
+    margin:10px;
+}

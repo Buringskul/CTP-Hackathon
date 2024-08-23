@@ -50,8 +50,8 @@ function SubmissionSnippets() {
                     <div key={index} className="submission-item">
                         <a>
                             <p className="submission-title">{submission.title}</p>
-                            <div className="color-box" style={{ backgroundColor: categoryColors[submission.category] }}></div>
-                            <span className="submission-category">{submission.category}</span>
+                            <div className="submission-snippet-color-box" style={{ backgroundColor: categoryColors[submission.category] }}></div>
+                            <span className="submission-snippet-category">{submission.category}</span>
                         </a>
                     </div>
                 ))}
