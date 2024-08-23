@@ -22,19 +22,6 @@ users_collection = db['users_collection']
 posts_collection = db['posts']  
 
 
-# @app.route('/api/users', methods=['GET'])
-# def users():
-#     return jsonify(
-#         {
-#             "users": [
-#                 'arpan',
-#                 'zach',
-#                 'jesse'
-#             ]
-#         }
-#     )
-
-
 def submit_form(data):
     firstName = data[1]
     lastName = data[2]
@@ -172,4 +159,3 @@ def discussions(): # gets posts
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
-
