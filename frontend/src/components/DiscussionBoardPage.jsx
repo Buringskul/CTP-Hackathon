@@ -17,14 +17,14 @@ function DiscussionBoardPage() {
                     0: {
                         'user': 'rafid',
                         'title': 'why one piece is the best',
-                        'category': 'facts, non-fiction',
+                        'category': 'Academics',
                         'likes': 999999999999999,
                         'body': 'here is why one piece is the best'
                     },
                     1: {
                         'user': 'alysa',
                         'title': 'why hzd is the best',
-                        'category': 'facts, non-fiction',
+                        'category': 'Questions',
                         'likes': 2,
                         'body': 'here is why hzd is the best'
                     }
