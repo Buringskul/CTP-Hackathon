@@ -29,16 +29,12 @@ users_collection = db['users_collection']
 
 
 def submit_form(data):
-    # if not data:
-    #     return jsonify({"error": "No data provided"}), 400
     f_name = data[1]
     l_name = data[2]
     email = data[3]
     password = data[4]
     username = data[5]
 
-    # if not all([f_name, l_name, email, password]):
-    #     return jsonify({"error": "All fields are required"}), 400
     existing_user = users_collection.find_one({'email': email})
     
     hashpass = bcrypt.hashpw(request.signup['password'].encode('utf-8'),bcrypt.gensalt())
