@@ -1,48 +1,80 @@
-.submission-item{
+.submission-item {
     background-color: #f9f9f9; /* Background color for grid items */
     border: 1px solid #ddd; /* Border around grid items */
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Stack content vertically */
+    align-items: flex-start; /* Align items to the start of the container */
     justify-content: center;
-    text-align: center;
+    padding: 20px; /* Add padding inside the grid item */
     font-size: 18px;
     color: #333;
     border-radius: 8px; /* Optional: rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
     transition: background-color 0.3s ease;
+    text-align: left; /* Align text to the left */
 }
 
-.submission-list{
+.submission-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns, each taking up equal space */
-    grid-auto-rows: minmax(100px, auto); /* Minimum row height of 100px, adjust as needed */
-    gap: 10px; /* Space between items, adjust as needed */
-    padding: 10px; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible grid */
+    gap: 20px; /* Space between items */
+    padding: 20px; 
 }
 
-.submission-item:hover{
+.submission-item:hover {
+    cursor: pointer;
+    background-color: #e0e0e0; /* Optional: change background color on hover */
+}
+
+.submission-title {
+    color: black;
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    white-space: nowrap; /* Prevents the text from wrapping to the next line */
+    overflow: hidden; /* Hides the overflowing content */
+    text-overflow: ellipsis; /* Adds "..." at the end of the text */
+    max-width: 100%; /* Ensures title doesn't overflow its container */
+}
+
+.submission-snippet-color-box {
+    height: 10px;
+    width: 10px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.submission-snippet-category {
+    font-size: 15px;
+    color: #333;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-.submission-title{
-    color: black;
-    font-size: 20px;
-    margin:0;
-    white-space: nowrap;           /* Prevents the text from wrapping to the next line */
-    overflow: hidden;              /* Hides the overflowing content */
-    text-overflow: ellipsis;       /* Adds "..." at the end of the text */
-    max-width: 30vw; 
+.pagination-button.active {
+    background-color: #0056b3; /* Highlight active page button */
 }
 
-.submission-snippet-color-box{
-    float: left;
-    position: relative;
-    left:10px;
-    top:10px;
-    height:10px;
-    width:10px;
+.pagination-button:hover {
+    background-color: #333;
 }
 
+<<<<<<< HEAD
 .submission-snippet-category{
     font-size: 15px;
     color:#333;
@@ -58,16 +90,23 @@
     margin:10px;
 }
 
-@media (min-width: 600px){
+@media (max-width: 600px){
     .submission-list{
         grid-template-columns: repeat(2, 1fr);
+=======
+@media (max-width: 600px) {
+    .submission-title {
+        font-size: 18px; /* Adjust font size for smaller screens */
+>>>>>>> 0333c7e1026a1b770e5c6d08ce1e07a2a9f5a6f7
     }
-    .submission-title{
-        max-width: 45vw; 
+    .submission-item {
+        padding: 15px;
     }
+<<<<<<< HEAD
     .submission-item{
         width: 45vw;
     }
   }
-
-  @media ()
+=======
+}
+>>>>>>> 0333c7e1026a1b770e5c6d08ce1e07a2a9f5a6f7
