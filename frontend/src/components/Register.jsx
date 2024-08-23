@@ -69,9 +69,11 @@ function Register() {
   function create_user(fname, lname, email, password) {
     const new_user = [fname, lname, email, password];
     axios.post("http://localhost:5000/api/register", new_user)
-    // axios.post("http://127.0.0.1:5000/api/register", new_user)
       .then((response) => {
-      console.log(response);
+        const data = response['data'] // data is an array of [boolean, fname, lname, email, password, username]
+        { data[0] ? console.log("Success!") : console.log("Fail") }
+        // change above to reload page if unsuccessful, possibly display message that it was unsuccessful
+          // if successful, log user in and send to login home page
       })
       .catch((error) => {
       console.log(error);

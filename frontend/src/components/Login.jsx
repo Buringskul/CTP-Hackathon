@@ -41,10 +41,10 @@ function Login() {
 
   function check_user(email, password) {
     const returning_user = [email, password];
-    axios.post("http://localhost:5000/api/register", returning_user)
-      // axios.post("http://127.0.0.1:5000/api/register", new_user)
+    axios.post("http://localhost:5000/api/login", returning_user)
       .then((response) => {
-        console.log(response);
+        const data = response['data']
+        { data[0] == "True" ? console.log("Success!") : console.log("Fail") }
       })
       .catch((error) => {
         console.log(error);
