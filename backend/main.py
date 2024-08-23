@@ -2,7 +2,7 @@ from flask_cors import CORS
 from flask import (Flask, render_template,
                    request,
                    jsonify)
-from flask_pymongo import Pymongo
+from flask_pymongo import PyMongo
 import pymongo
 import bcrypt
 from pymongo import MongoClient
@@ -13,7 +13,7 @@ CORS(app)  # Allow all origins or specify your frontend origin
 app.secret_key = 'testing'
 
 app.config['MONGO_URI'] = 'mongodb://localhost:27017/'  # Update URI as needed
-mongo = Pymongo(app)
+mongo = PyMongo(app)
 c = MongoClient()
 
 client = pymongo.MongoClient('mongodb+srv://laraschuman:laraschuman@testing.jr3jj.mongodb.net/?retryWrites=true&w=majority&appName=Testing')
