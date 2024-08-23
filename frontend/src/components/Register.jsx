@@ -8,14 +8,14 @@ function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  class User {
-    constructor(fname, lname, email, password) {
-      this.fname;
-      this.lname;
-      this.email;
-      this.password;
-    }
-  }
+  // class User {
+  //   constructor(fname, lname, email, password) {
+  //     this.fname;
+  //     this.lname;
+  //     this.email;
+  //     this.password;
+  //   }
+  // }
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -67,7 +67,7 @@ function Register() {
   );
 
   function create_user(fname, lname, email, password) {
-    const new_user = new User(fname, lname, email, password);
+    const new_user = [fname, lname, email, password];
     axios.post("http://localhost:5000/api/register", new_user)
     // axios.post("http://127.0.0.1:5000/api/register", new_user)
       .then((response) => {
