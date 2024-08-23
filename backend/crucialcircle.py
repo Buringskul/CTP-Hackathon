@@ -1,8 +1,6 @@
 import bcrypt
-from flask import (Flask, render_template, redirect, url_for, flash, session)
+from flask import (Flask, render_template, redirect, url_for, flash, session, request, jsonify)
 from flask_behind_proxy import FlaskBehindProxy
-from forms import SignUpForm, SignInForm, ForumPost
-from forms import Flask, request, jsonify
 import pymongo
 
 app = Flask(__name__)
