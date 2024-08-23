@@ -1,7 +1,9 @@
 from flask_cors import CORS
-from flask import (Flask,
+from flask import (Flask, render_template,
                    request,
                    jsonify)
+import pymongo
+import bcrypt
 
 app = Flask(__name__)
 cors = CORS(app, origins='*')  # specify origins
@@ -9,6 +11,13 @@ cors = CORS(app, origins='*')  # specify origins
 #     "http://localhost:5173/register"
 # ]
 
+## testing database ##
+app.secret_key = 'testing'
+# global logged_in
+
+client = pymongo.MongoClient('mongodb+srv://laraschuman:laraschuman@testing.jr3jj.mongodb.net/?retryWrites=true&w=majority&appName=Testing')
+db = client.get_database('total_records')
+users_collection = db['users_collection']  
 
 @app.route('/api/users', methods=['GET'])
 def users():
@@ -21,6 +30,33 @@ def users():
             ]
         }
     )
+
+def submit_form():
+    data = request.json
+    if not data:
+        return jsonify({"error": "No data provided"}), 400
+    f_name = data.get('firstName')
+    l_name = data.get('lastName')
+    email = data.get('email')
+    password = data.get('password')
+
+    if not all([f_name, l_name, email, password]):
+        return jsonify({"error": "All fields are required"}), 400
+    existing_user = users_collection.find_one({'email': email})
+    
+    hashpass = bcrypt.hashpw(request.signup['password'].encode('utf-8'),bcrypt.gensalt())
+
+    if existing_user:
+        return jsonify({"error": "User with this email already exists"}), 400
+    
+    new_user = {
+                'username':create_username(email),
+                'firstName': f_name,
+                'lastName': l_name,
+                'email': email,
+                'password': hashpass.decode('utf-8')
+            }
+    return jsonify({"message":"Data received successfully!"}), 200
 
 
 @app.route('/api/login', methods=['GET', 'POST'])
@@ -41,6 +77,9 @@ def register():
     username = create_username(data[2])
     print(username)
 
+    if request.method == 'POST':
+        return submit_form()
+    return render_template('register.html')
     # do something here to check if user (or email) exists in database
 
     # do something here to add user to database
@@ -65,3 +104,4 @@ def create_username(email):
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
+
