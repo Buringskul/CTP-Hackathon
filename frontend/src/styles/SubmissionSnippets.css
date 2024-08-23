@@ -74,7 +74,6 @@
     background-color: #333;
 }
 
-<<<<<<< HEAD
 .submission-snippet-category{
     font-size: 15px;
     color:#333;
@@ -89,24 +88,18 @@
     background-color: black;
     margin:10px;
 }
-
-@media (max-width: 600px){
-    .submission-list{
-        grid-template-columns: repeat(2, 1fr);
-=======
+    
 @media (max-width: 600px) {
+    .submission-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+
     .submission-title {
         font-size: 18px; /* Adjust font size for smaller screens */
->>>>>>> 0333c7e1026a1b770e5c6d08ce1e07a2a9f5a6f7
     }
+
     .submission-item {
         padding: 15px;
+        width: 100%; /* Ensure items take up full width of grid column */
     }
-<<<<<<< HEAD
-    .submission-item{
-        width: 45vw;
-    }
-  }
-=======
 }
->>>>>>> 0333c7e1026a1b770e5c6d08ce1e07a2a9f5a6f7
