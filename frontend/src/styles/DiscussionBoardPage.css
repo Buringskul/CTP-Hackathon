@@ -1,5 +1,6 @@
 .DiscussionBoard{
     margin-top: 18vh;
+    text-align: left;
 }
 
 a:hover{
@@ -23,11 +24,13 @@ a:hover{
 .profile{
     font-size: x-large;
     position: relative;
-    bottom: 20px;
+    bottom: 50px;
+    left: 12px;
 }
 
 .heart{
     position: relative;
+    
 }
 
 .submission-list{
@@ -54,9 +57,11 @@ a:hover{
     max-width: 80vw; 
 }
 
-.submission-description{
+.discussion-submission-description{
+    display: none;
     color: #333;
     padding-left: 30px;
+    width: 75vw;
     border-left: 1px solid black;
     display: -webkit-box;          /* Use a box model that allows for multiple lines */
     -webkit-box-orient: vertical;  /* Specifies the orientation of the box (vertical for multi-line) */
@@ -73,21 +78,16 @@ a:hover{
 }
 
 .color-box{
-    float: left;
-    position: relative;
-    left:-280px;
-    top:-13px;
     height:10px;
     width:10px;
 }
 
 .submission-category{
+    position: relative;
+    bottom: 18px;
+    left:13px;
     font-size: 15px;
     color:#333;
-    float:left;
-    position: relative;
-    left: -275px;
-    top:-20px;
 }
 
 .submission-profile{
@@ -108,6 +108,7 @@ a:hover{
     height:35px;
     width: 35px;
     border-radius: 100%;
+    text-align: center;
 }
 
 .like-number{
