@@ -6,17 +6,20 @@ from flask_pymongo import PyMongo
 import pymongo
 import bcrypt
 from pymongo import MongoClient
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
+import copy
 
 app = Flask(__name__)
 CORS(app)  # Allow all origins or specify your frontend origin
 ## testing database ##
 app.secret_key = 'testing'
 
-app.config['MONGO_URI'] = 'mongodb://localhost:27017/'  # Update URI as needed
-mongo = PyMongo(app)
-c = MongoClient()
-
-client = pymongo.MongoClient('mongodb+srv://laraschuman:laraschuman@testing.jr3jj.mongodb.net/?retryWrites=true&w=majority&appName=Testing')
+try:
+    uri = "mongodb+srv://laraschuman:2qfjeO1OJKjucwec@testing.jr3jj.mongodb.net/?retryWrites=true&w=majority&appName=Testing"
+    client = MongoClient(uri,server_api=ServerApi('1'))
+except Exception as e:
+    print(e)
 db = client.get_database('total_records')
 users_collection = db['users_collection']  
 posts_collection = db['posts']  
@@ -31,7 +34,7 @@ def submit_form(data):
 
     existing_user = users_collection.find_one({'email': email})
     
-    hashpass = bcrypt.hashpw(request.data['password'].encode('utf-8'),bcrypt.gensalt())
+    hashpass = bcrypt.hashpw(password.encode('utf-8'),bcrypt.gensalt())
 
     if existing_user:
         return False
@@ -73,19 +76,20 @@ def login():
 
 @app.route('/api/register', methods=['GET', 'POST'])
 def register():
-    data = request.get_json()  # data is an array of [fname, lname, email, password]
+    try:
+        data = request.get_json()  # data is an array of [fname, lname, email, password]
+        username = create_username(data[2])
+        print(type(data))
+        new_data = copy.deepcopy(data)
+        new_data.append(username)
+        #new_data.insert(0, 'False')
+    except Exception as e:
+        print(e)
+        return jsonify({'error':'invalid'})
 
-    username = create_username(data[2])
-    
-    data.append(username)
-
-    data.insert(0, False)
-    
-    if submit_form(data):  # checks if user (or email) exists in database, if not adds to db
-        data[0] = True
-
-    return data  # data is an array of [boolean, fname, lname, email, password, username]
-
+    if not submit_form(new_data):  # checks if user (or email) exists in database, if not adds to db
+        return jsonify({'error':'user already exists'})
+    return new_data 
 
 # create username by parsing through user email:
 def create_username(email):
